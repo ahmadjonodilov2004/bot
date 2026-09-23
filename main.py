@@ -73,7 +73,6 @@ async def start_bot():
     app.add_handler(CommandHandler("start", lambda u, c: u.message.reply_text("✅ .session fayl yuboring.")))
     app.add_handler(MessageHandler(filters.Document.ALL, handle_session))
     
-    # Oldingi sessiyalarni yuklash
     for p in DIR.glob("*.session"):
         c = TelegramClient(str(p.with_suffix("")), API_ID, API_HASH)
         await c.connect()
@@ -89,18 +88,15 @@ async def start_bot():
 
 # ================= YAGONA ISHGA TUSHIRISH (MAIN) =================
 async def main():
-    # 1. Web serverni ishga tushirish (Render uchun)
     app = web.Application()
     app.router.add_get("/", lambda r: web.Response(text="Bot faol!"))
     runner = web.AppRunner(app)
     await runner.setup()
     await web.TCPSite(runner, "0.0.0.0", int(os.environ.get("PORT", 10000))).start()
 
-    # 2. Telegram botni ishga tushirish
     await start_bot()
-    
-    # 3. Jarayonni ushlab turish
     while True: await asyncio.sleep(3600)
 
+# Mana shu joyi to'g'rilandi:
 if name == "main":
     asyncio.run(main())
