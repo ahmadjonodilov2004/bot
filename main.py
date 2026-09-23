@@ -9,7 +9,7 @@ from telethon import TelegramClient, events, functions
 from telethon.tl.functions.account import UpdateProfileRequest
 
 # ================= SOZLAMALAR =================
-BOT_TOKEN = "8306862864:AAGRndw5uMx5ifjOii3Kj2mzyRCA9bKxCH8"
+BOT_TOKEN = "8138889261:AAHVGB2NQUijnbVYixmjowx0p0VgUVvLEf4"
 API_ID = 946606
 API_HASH = "a183e9d1503a9c6514bd086dd03aeb8e"
 OWNER_ID = 7035377346
