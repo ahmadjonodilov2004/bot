@@ -98,5 +98,5 @@ async def main():
     while True: await asyncio.sleep(3600)
 
 # Mana shu joyi to'g'rilandi:
-if name == "main":
+if __name__ == "__main__":
     asyncio.run(main())
